@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обратная связь — Задание 8</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">WEB-разработка · Задание 8</p>
+      <h1 id="page-title">Форма обратной связи</h1>
+      <p class="lead">
+        Нажмите кнопку, чтобы открыть форму. Введённые данные сохраняются
+        автоматически и восстанавливаются после повторного открытия страницы.
+      </p>
+      <button class="open-button" id="open-feedback" type="button">
+        Открыть форму
+      </button>
+    </section>
+  </main>
+
+  <div class="modal" id="feedback-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <section
+      class="modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="feedback-title"
+    >
+      <button
+        class="close-button"
+        id="close-feedback"
+        type="button"
+        aria-label="Закрыть форму"
+      >
+        ×
+      </button>
+
+      <h2 id="feedback-title">Связаться с нами</h2>
+
+      <form
+        id="feedback-form"
+        action="https://formcarry.com/s/R9Z0DxClzEq"
+        method="POST"
+      >
+        <div class="fields-grid">
+          <div class="field">
+            <label for="full-name">ФИО</label>
+            <input
+              id="full-name"
+              name="full_name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="organization">Организация</label>
+            <input
+              id="organization"
+              name="organization"
+              type="text"
+              autocomplete="organization"
+            >
+          </div>
+
+          <div class="field field-wide">
+            <label for="message">Сообщение</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input id="consent" name="consent" type="checkbox" value="yes" required>
+          <span>Я согласен(а) с политикой обработки персональных данных</span>
+        </label>
+
+        <div class="form-footer">
+          <p class="form-status" id="form-status" role="status"></p>
+          <button class="submit-button" id="submit-button" type="submit">
+            Отправить
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
